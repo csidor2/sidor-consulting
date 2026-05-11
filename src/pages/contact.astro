@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contact" description="Get in touch with Sidor Consulting Services.">
+  <Nav />
+
+  <!-- Hero -->
+  <section class="pt-32 pb-16 bg-slate-900 text-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <span class="text-blue-400 text-sm font-semibold tracking-widest uppercase">Get in Touch</span>
+      <h1 class="mt-3 text-4xl md:text-5xl font-extrabold leading-tight">
+        Let's start a<br />
+        <span class="text-blue-400">conversation.</span>
+      </h1>
+      <p class="mt-6 text-slate-300 text-lg max-w-xl leading-relaxed">
+        Tell us where you are, where you want to go, and we'll figure out together if we're a fit.
+        No sales pitch — just an honest conversation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+
+        <!-- Email CTA -->
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">Reach out directly</h2>
+          <p class="text-slate-500 leading-relaxed mb-8">
+            Email us with a brief description of your company, your stage, and the challenge you're
+            facing. We respond to every inquiry within one business day.
+          </p>
+          <a
+            href="mailto:hello@sidorconsulting.com"
+            class="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-colors text-lg"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            hello@sidorconsulting.com
+          </a>
+        </div>
+
+        <!-- What to Expect -->
+        <div class="bg-slate-50 rounded-2xl p-8">
+          <h3 class="text-lg font-bold text-slate-900 mb-6">What to expect</h3>
+          <div class="space-y-5">
+            {[
+              { step: '1', title: 'You reach out', desc: 'Send us an email with a quick intro — your company, stage, and what you're working on.' },
+              { step: '2', title: 'We respond in 24 hours', desc: 'If there's a potential fit, we'll set up a no-obligation intro call — typically 30 minutes.' },
+              { step: '3', title: 'Intro call', desc: 'We listen first. You walk us through your situation and we share how we might be able to help.' },
+              { step: '4', title: 'Proposal (if it's a fit)', desc: 'We put together a simple, scoped proposal outlining the engagement and what you can expect.' },
+            ].map((item) => (
+              <div class="flex gap-4">
+                <div class="w-7 h-7 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+                  {item.step}
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-900 text-sm">{item.title}</h4>
+                  <p class="text-slate-500 text-sm mt-0.5 leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">Common Questions</h2>
+      <div class="space-y-5">
+        {[
+          {
+            q: 'What stage companies do you work with?',
+            a: 'Primarily pre-seed through Series B — companies that have found some traction and are ready to build a real sales motion.',
+          },
+          {
+            q: 'Do you work with B2B only?',
+            a: 'Yes. Our expertise is in B2B sales and go-to-market, with a particular focus on SaaS and tech-enabled businesses.',
+          },
+          {
+            q: 'How long does a typical engagement last?',
+            a: 'It depends on the scope. Sprint engagements run 2–4 weeks. Embedded and advisory work typically runs 1–6 months.',
+          },
+          {
+            q: 'Do you take equity?',
+            a: 'We're open to discussing equity components for the right engagements. Reach out and we can talk through what makes sense.',
+          },
+        ].map((item) => (
+          <div class="bg-white rounded-xl p-6 border border-slate-200">
+            <h4 class="font-semibold text-slate-900 mb-2">{item.q}</h4>
+            <p class="text-slate-500 text-sm leading-relaxed">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

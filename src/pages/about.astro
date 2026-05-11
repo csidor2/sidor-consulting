@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="About" description="Learn about Sidor Consulting Services and our mission to help early-stage companies scale their sales.">
+  <Nav />
+
+  <!-- Hero -->
+  <section class="pt-32 pb-16 bg-slate-900 text-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <span class="text-blue-400 text-sm font-semibold tracking-widest uppercase">About Us</span>
+      <h1 class="mt-3 text-4xl md:text-5xl font-extrabold leading-tight">
+        We've been in the<br />
+        <span class="text-blue-400">trenches of early-stage sales.</span>
+      </h1>
+      <p class="mt-6 text-slate-300 text-lg max-w-2xl leading-relaxed">
+        Sidor Consulting Services was founded on a simple belief: early-stage companies deserve
+        sales expertise that is practical, experienced, and genuinely invested in their success.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-blue-600 text-sm font-semibold tracking-widest uppercase">Our Mission</span>
+          <h2 class="mt-3 text-3xl font-bold text-slate-900 leading-snug">
+            Turn sales chaos into a scalable, repeatable engine
+          </h2>
+          <p class="mt-4 text-slate-500 leading-relaxed">
+            Most early-stage companies grow their first revenue through founder-led, relationship-driven
+            hustle. That works — until it doesn't. We help you make the transition from "we sell to
+            everyone who'll talk to us" to a disciplined, focused GTM motion that compounds over time.
+          </p>
+          <p class="mt-4 text-slate-500 leading-relaxed">
+            We don't believe in theoretical frameworks or cookie-cutter playbooks. We get into the
+            details with you, understand your market and your team, and build something that actually works.
+          </p>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-8 space-y-6">
+          {[
+            { title: 'Practical Over Perfect', desc: 'We focus on what you can execute today, not ideal-state frameworks.' },
+            { title: 'Founder-Friendly', desc: 'We know your resources are limited. Our engagements are high-impact and efficient.' },
+            { title: 'Operator Background', desc: 'Our advice comes from having actually built and run sales teams, not just advised them.' },
+          ].map((item) => (
+            <div class="flex gap-4">
+              <div class="w-2 h-2 mt-2 rounded-full bg-blue-600 flex-shrink-0"></div>
+              <div>
+                <h4 class="font-semibold text-slate-900">{item.title}</h4>
+                <p class="text-slate-500 text-sm mt-1">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Approach -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="text-blue-600 text-sm font-semibold tracking-widest uppercase">How We Work</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold text-slate-900">Our Approach</h2>
+        <p class="mt-4 text-slate-500 max-w-xl mx-auto">
+          Every engagement starts with listening. We don't come in with answers — we come in with the
+          right questions.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        {[
+          { step: '01', title: 'Diagnose', desc: 'Deep dive into your current sales motion, pipeline, and team to understand exactly where the gaps are.' },
+          { step: '02', title: 'Design', desc: 'Build a tailored strategy and GTM plan based on your stage, market, and resources.' },
+          { step: '03', title: 'Execute', desc: 'Work side-by-side with your team to implement and iterate — not just hand off a slide deck.' },
+          { step: '04', title: 'Scale', desc: 'Establish the metrics, processes, and playbooks that let your team keep growing independently.' },
+        ].map((item) => (
+          <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+            <div class="text-4xl font-extrabold text-blue-100 mb-3">{item.step}</div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Want to learn more?</h2>
+      <p class="text-slate-500 mb-8">Reach out and let's have an honest conversation about what you're building.</p>
+      <a
+        href="/contact"
+        class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        Get in Touch
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
